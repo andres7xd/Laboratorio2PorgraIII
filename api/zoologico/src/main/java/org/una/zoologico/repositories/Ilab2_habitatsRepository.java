@@ -5,10 +5,14 @@
  */
 package org.una.zoologico.repositories;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.una.zoologico.entities.lab2_habitats;
+
+
 /**
  *
  * @author andre
  */
-public interface Ilab2_habitatsRepository {
+public interface Ilab2_habitatsRepository extends JpaRepository<lab2_habitats, Long> {
     
 }
