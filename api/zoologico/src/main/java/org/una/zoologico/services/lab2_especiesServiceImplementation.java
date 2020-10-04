@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.una.zoologico.entities.lab2_especies;
 import org.una.zoologico.repositories.Ilab2_especiesRepository;
 
@@ -23,11 +24,13 @@ public class lab2_especiesServiceImplementation implements Ilab2_especiesService
     private Ilab2_especiesRepository lab2_especiesRepository;
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<List<lab2_especies>> findAll() {
         return Optional.ofNullable(lab2_especiesRepository.findAll());
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<lab2_especies> findById(Long id) {
         return lab2_especiesRepository.findById(id);
     }
