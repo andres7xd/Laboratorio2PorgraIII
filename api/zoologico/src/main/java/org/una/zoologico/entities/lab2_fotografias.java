@@ -39,8 +39,8 @@ import lombok.ToString;
 
 public class lab2_fotografias implements Serializable{
    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_especie")
-    private List<lab2_especies> Listespecies = new ArrayList<>();;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_fotografia")
+    private List<lab2_especies> Listespecies = new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

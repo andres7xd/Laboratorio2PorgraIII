@@ -12,6 +12,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,18 +42,17 @@ import lombok.ToString;
 @AllArgsConstructor
 
 //@NoArgsConstructor
-
 @ToString
 
 public class lab2_especies implements Serializable {
 
     @ManyToOne
-    @JoinColumn(name = "lab2_especies_id")
-    private lab2_especies lab2_especie;
+    @JoinColumn(name = "fotografia")
+    private lab2_fotografias lab2_fotografia;
 //
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_especie")
-    private List<lab2_habitats> Listhabitats = new ArrayList<>();
-//    
+ @OneToMany(mappedBy = "lab2_especies") 
+    private List<lab2_habitats> lab2_habitats = new ArrayList<>();
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_especie")
     private List<lab2_vulnerabilidades> Listvulnerabilidad = new ArrayList<>();
 
@@ -87,7 +87,7 @@ public class lab2_especies implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public lab2_especies() {
-      
+
         estado = 1;
 //        fecha_registro = new Date();
     }

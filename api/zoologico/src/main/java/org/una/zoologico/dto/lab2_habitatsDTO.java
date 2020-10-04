@@ -29,6 +29,6 @@ public class lab2_habitatsDTO {
     private String vegetacion;
     private Date fecha_registro;
     private Date fecha_modificacion;
-    private boolean estado;
-    private lab2_especies lab2_especie;
+    private byte estado;
+    private lab2_especiesDTO lab2_especies;
 }

@@ -12,6 +12,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -44,8 +45,8 @@ import lombok.ToString;
 public class lab2_habitats implements Serializable {
     
     @ManyToOne
-    @JoinColumn(name = "especie_id")
-    private lab2_especies lab2_especie;
+    @JoinColumn(name = "lab2_especies")
+    private lab2_especies lab2_especies;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_habitat") 
     private List<lab2_vulnerabilidades> Listvulnerabilidades= new ArrayList<>();
@@ -77,13 +78,12 @@ public class lab2_habitats implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaModificacion;
 
-    private boolean estado;
-
+   private byte estado;
     @PrePersist
 
     public void prePersist() {
 
-        estado = true;
+        estado = 1;
 
         fechaRegistro = new Date();
 
