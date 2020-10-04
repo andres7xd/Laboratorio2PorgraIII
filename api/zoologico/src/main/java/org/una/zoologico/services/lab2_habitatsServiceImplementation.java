@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.una.zoologico.entities.lab2_habitats;
 import org.una.zoologico.repositories.Ilab2_habitatsRepository;
-import org.una.zoologico.repositories.Ilab2_recorridosRepository;
+
 
 /**
  *

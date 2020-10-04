@@ -6,10 +6,7 @@
 package org.una.zoologico.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,8 +14,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -35,39 +30,29 @@ import lombok.ToString;
  * @author andre
  */
 @Entity
-@Table(name = "lab2_habitats")
+@Table(name = "lab2_vulnerabilidades")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-
-public class lab2_habitats implements Serializable {
+public class lab2_vulnerabilidades implements Serializable{
+   
+    @ManyToOne
+    @JoinColumn(name = "habitat_id")
+    private lab2_habitats lab2_habitat;
     
     @ManyToOne
     @JoinColumn(name = "especie_id")
     private lab2_especies lab2_especie;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_habitat") 
-    private List<lab2_vulnerabilidades> Listvulnerabilidades= new ArrayList<>();
-    
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_habitat") 
-//    private List<lab2_estaciones_recorridos> Listestaciones_recorridos= new ArrayList<>();
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "nombre", length = 45)
-    private String nombre;
-
-    @Column(name = "clima", length = 45)
-    private String clima;
-
-    @Column(name = "vegetacion", length = 45)
-    private String vegetacion;
-
-    @Column(name = "fecha_registro")
+    
+    @Column(name = "indice",  scale = 2)
+    private double indice;
+    
+       @Column(name = "fecha_registro")
     @Setter(AccessLevel.NONE)
     @Temporal(TemporalType.DATE)
     private Date fechaRegistro;
@@ -76,14 +61,10 @@ public class lab2_habitats implements Serializable {
     @Setter(AccessLevel.NONE)
     @Temporal(TemporalType.DATE)
     private Date fechaModificacion;
+    
+     public void prePersist() {
 
-    private boolean estado;
-
-    @PrePersist
-
-    public void prePersist() {
-
-        estado = true;
+     
 
         fechaRegistro = new Date();
 
@@ -98,5 +79,5 @@ public class lab2_habitats implements Serializable {
         fechaModificacion = new Date();
 
     }
-
+    
 }

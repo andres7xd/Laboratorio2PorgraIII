@@ -50,11 +50,11 @@ public class lab2_especies implements Serializable {
     @JoinColumn(name = "lab2_especies_id")
     private lab2_especies lab2_especie;
 //
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_habitats")
-//    private List<lab2_habitats> Listhabitats = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_especie")
+    private List<lab2_habitats> Listhabitats = new ArrayList<>();
 //    
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_vulnerabilidad")
-//    private List<lab2_vulnerabilidad> Listvulnerabilidad = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_especie")
+    private List<lab2_vulnerabilidades> Listvulnerabilidad = new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

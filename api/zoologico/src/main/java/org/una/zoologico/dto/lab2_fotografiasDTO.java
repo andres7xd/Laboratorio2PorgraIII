@@ -25,5 +25,5 @@ public class lab2_fotografiasDTO {
     private int total_partes;
     private int orden;
     private String parte;
-    private lab2_especies lab2_especie;
+
 }

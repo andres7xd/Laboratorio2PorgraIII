@@ -28,14 +28,14 @@ import org.una.zoologico.utils.MapperUtils;
  */
 @RestController
 @RequestMapping("/lab2_recorridos") 
-@Api(tags = {"lab2_Recorridos"})
+@Api(tags = {"Recorridos"})
 public class lab2_recorridosController {
     
      @Autowired
     private Ilab2_recorridosService recorridosService;
 
     @GetMapping() 
-    @ApiOperation(value = "Obtiene una lista de todos los recorridos", response = lab2_recorridosDTO.class, responseContainer = "List", tags = "lab2_Recorridos")
+    @ApiOperation(value = "Obtiene una lista de todos los recorridos", response = lab2_recorridosDTO.class, responseContainer = "List", tags = "Recorridos")
     public @ResponseBody
     ResponseEntity<?> findAll() {
         try {

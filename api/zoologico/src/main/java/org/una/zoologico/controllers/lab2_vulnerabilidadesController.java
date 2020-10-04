@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.una.zoologico.dto.lab2_habitatsDTO;
-import org.una.zoologico.entities.lab2_habitats;
-import org.una.zoologico.services.Ilab2_habitatsService;
+import org.una.zoologico.dto.lab2_vulnerabilidadesDTO;
+import org.una.zoologico.entities.lab2_vulnerabilidades;
+import org.una.zoologico.services.Ilab2_vulnerabilidadesService;
 import org.una.zoologico.utils.MapperUtils;
 
 /**
@@ -27,22 +27,22 @@ import org.una.zoologico.utils.MapperUtils;
  * @author andre
  */
 @RestController
-@RequestMapping("/lab2_habitats") 
-@Api(tags = {"Habitats"})
-public class lab2_habitatsController {
+@RequestMapping("/lab2_vulnerabilidades") 
+@Api(tags = {"Vulnerabilidades"})
+public class lab2_vulnerabilidadesController {
     
     @Autowired
-    private Ilab2_habitatsService habitatsService;
+    private Ilab2_vulnerabilidadesService vulnerabilidadesService;
 
     @GetMapping()
-    @ApiOperation(value = "Obtiene una lista de todos los habitats", response = lab2_habitatsDTO.class, responseContainer = "List", tags = "Habitats")
+    @ApiOperation(value = "Obtiene una lista de todos las vulnerabilidades", response = lab2_vulnerabilidadesDTO.class, responseContainer = "List", tags = "Vulnerabilidades")
     public @ResponseBody
     ResponseEntity<?> findAll() {
         try {
-            Optional<List<lab2_habitats>> result = habitatsService.findAll();
+            Optional<List<lab2_vulnerabilidades>> result = vulnerabilidadesService.findAll();
             if (result.isPresent()) {
-                List<lab2_habitatsDTO> habitatsDTO = MapperUtils.DtoListFromEntityList(result.get(), lab2_habitatsDTO.class);
-                return new ResponseEntity<>(habitatsDTO, HttpStatus.OK);
+                List<lab2_vulnerabilidadesDTO> vulnerabilidadesDTO = MapperUtils.DtoListFromEntityList(result.get(), lab2_vulnerabilidadesDTO.class);
+                return new ResponseEntity<>(vulnerabilidadesDTO, HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
@@ -55,10 +55,10 @@ public class lab2_habitatsController {
     public ResponseEntity<?> findById(@PathVariable(value = "id") Long id) {
         try {
 
-            Optional<lab2_habitats> habitatsFound = habitatsService.findById(id);
-            if (habitatsFound.isPresent()) {
-                lab2_habitatsDTO habitatsDto = MapperUtils.DtoFromEntity(habitatsFound.get(), lab2_habitatsDTO.class);
-                return new ResponseEntity<>(habitatsDto, HttpStatus.OK);
+            Optional<lab2_vulnerabilidades> vulnerabilidadesFound = vulnerabilidadesService.findById(id);
+            if (vulnerabilidadesFound.isPresent()) {
+                lab2_vulnerabilidadesDTO vulnerabilidadesDto = MapperUtils.DtoFromEntity(vulnerabilidadesFound.get(), lab2_vulnerabilidadesDTO.class);
+                return new ResponseEntity<>(vulnerabilidadesDto, HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
@@ -66,4 +66,5 @@ public class lab2_habitatsController {
             return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
 }

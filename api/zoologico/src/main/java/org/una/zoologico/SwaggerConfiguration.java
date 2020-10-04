@@ -36,7 +36,11 @@ public class SwaggerConfiguration {
                 .build()
                 .apiInfo(apiInfo())
                 .tags(new Tag("Especies", "Entidad de Especies") {},
-                        new Tag("Fotografias", "Entidad de Fotografias")
+                        new Tag("Fotografias", "Entidad de Fotografias"),
+                        new Tag("Habitats", "Entidad de Habitats"),
+                        new Tag("Vulnerabilidades", "Entidad de Vulnerabilidades"),
+                        new Tag("Recorridos", "Entidad de Recorridos")
+                        
                 );
 
     }

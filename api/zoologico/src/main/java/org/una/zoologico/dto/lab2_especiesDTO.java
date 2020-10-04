@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.una.zoologico.entities.lab2_especies;
+import org.una.zoologico.entities.lab2_fotografias;
 
 /**
  *
@@ -29,6 +30,7 @@ public class lab2_especiesDTO {
     private String fecha_modificacion;
     private byte estado;
     private Date fecha_registro;
-   private lab2_especies lab2_especie;
+   private lab2_fotografias lab2_fotografia;
+  
 
 }
