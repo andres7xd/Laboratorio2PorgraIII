@@ -47,13 +47,13 @@ import lombok.ToString;
 public class lab2_especies implements Serializable {
 
     @ManyToOne
-    @JoinColumn(name = "fotografia")
-    private lab2_fotografias lab2_fotografia;
+    @JoinColumn(name = "fotografia_id")
+    private lab2_fotografias fotografia_id;
 //
- @OneToMany(mappedBy = "especies_id") 
-    private List<lab2_habitats> lab2_habitats = new ArrayList<>();
+ @OneToMany(cascade = CascadeType.ALL,mappedBy = "especies_id") 
+    private List<lab2_habitats> habitats_id = new ArrayList<>();
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_especie")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "especie_id")
     private List<lab2_vulnerabilidades> Listvulnerabilidad = new ArrayList<>();
 
     @Id

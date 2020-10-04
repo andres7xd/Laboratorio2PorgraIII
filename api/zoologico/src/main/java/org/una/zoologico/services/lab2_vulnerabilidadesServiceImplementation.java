@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import org.springframework.transaction.annotation.Transactional;
+import org.una.zoologico.dto.lab2_vulnerabilidadesDTO;
 import org.una.zoologico.entities.lab2_vulnerabilidades;
 import org.una.zoologico.repositories.Ilab2_vulnerabilidadesRepository;
 
@@ -35,5 +36,23 @@ public class lab2_vulnerabilidadesServiceImplementation implements Ilab2_vulnera
     public Optional<lab2_vulnerabilidades> findById(Long id) {
         return lab2_vulnerabilidadesRepository.findById(id);
     }
+    
+
+
+    @Override
+    public Optional<List<lab2_vulnerabilidades>> findByNombreComunEspecie(String nombre) {
+       return Optional.ofNullable(lab2_vulnerabilidadesRepository.findByNombreComunEspecie(nombre));
+    } 
+    
+    @Override
+    public Optional<List<lab2_vulnerabilidades>> findByNombreCientificoEspecie(String nombrectf) {
+        return Optional.ofNullable(lab2_vulnerabilidadesRepository.findByNombreCientificoEspecie(nombrectf));
+    }
+
+    @Override
+    public Optional<List<lab2_vulnerabilidades>> findByEstado(byte estado) {
+       return Optional.ofNullable(lab2_vulnerabilidadesRepository.findByEstado(estado));  
+    }
+
 
 }

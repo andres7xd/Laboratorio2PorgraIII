@@ -39,7 +39,7 @@ import lombok.ToString;
 
 public class lab2_fotografias implements Serializable{
    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_fotografia")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "fotografia_id")
     private List<lab2_especies> Listespecies = new ArrayList<>();
 
     @Id

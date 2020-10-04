@@ -45,7 +45,7 @@ import lombok.ToString;
 @ToString
 public class lab2_recorridos implements Serializable {
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_recorridos")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recorrido_id")
     private List<lab2_estaciones_recorridos> recorridos = new ArrayList<>();
 
     @Id

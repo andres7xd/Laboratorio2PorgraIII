@@ -15,4 +15,6 @@ import org.una.zoologico.entities.lab2_habitats;
  */
 public interface Ilab2_habitatsRepository extends JpaRepository<lab2_habitats, Long> {
     
+    
+
 }

@@ -34,11 +34,11 @@ public class lab2_estaciones_recorridos implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "recorrido_Id")
-    private lab2_recorridos lab2_recorridos;
+    private lab2_recorridos recorrido_id;
 
     @ManyToOne
     @JoinColumn(name = "habitat_Id")
-    private lab2_habitats lab2_habitat;
+    private lab2_habitats habitat_id;
 
     @Id
 
