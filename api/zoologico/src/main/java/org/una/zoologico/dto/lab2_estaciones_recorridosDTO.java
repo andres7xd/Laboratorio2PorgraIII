@@ -5,30 +5,26 @@
  */
 package org.una.zoologico.dto;
 
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.una.zoologico.entities.lab2_especies;
+import org.una.zoologico.entities.lab2_habitats;
+import org.una.zoologico.entities.lab2_recorridos;
 
 /**
  *
- * @author andre
+ * @author Luis
  */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor 
 @ToString
 
-public class lab2_habitatsDTO {
+public class lab2_estaciones_recorridosDTO {
     
-    private Long id;
-    private String nombre;
-    private String clima;
-    private String vegetacion;
-    private Date fecha_registro;
-    private Date fecha_modificacion;
-    private boolean estado;
-    private lab2_especies lab2_especie;
+     private Long id;
+     private lab2_recorridos recorrido_id;
+     private lab2_habitats lab2_habitat;
 }
