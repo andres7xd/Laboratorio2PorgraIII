@@ -7,12 +7,16 @@ package org.una.zoologico.entities;
 
 import java.io.Serializable;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -40,6 +44,9 @@ import lombok.ToString;
 
 @ToString
 public class lab2_recorridos implements Serializable {
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_recorridos")
+    private List<lab2_estaciones_recorridos> recorridos = new ArrayList<>();
 
     @Id
 

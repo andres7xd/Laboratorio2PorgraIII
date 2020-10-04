@@ -50,8 +50,8 @@ public class lab2_habitats implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_habitat") 
     private List<lab2_vulnerabilidades> Listvulnerabilidades= new ArrayList<>();
     
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_habitat") 
-//    private List<lab2_estaciones_recorridos> Listestaciones_recorridos= new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_habitat") 
+    private List<lab2_estaciones_recorridos> Listestaciones_recorridos= new ArrayList<>();
 
 
     @Id
