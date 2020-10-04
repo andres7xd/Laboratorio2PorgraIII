@@ -46,7 +46,7 @@ public class lab2_habitats implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "lab2_especies")
-    private lab2_especies lab2_especies;
+    private lab2_especies especies_id;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_habitat") 
     private List<lab2_vulnerabilidades> Listvulnerabilidades= new ArrayList<>();

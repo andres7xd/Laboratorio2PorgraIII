@@ -20,6 +20,7 @@ public class lab2_vulnerabilidadesDTO {
     private double indice;
     private Date fecha_registro;
     private Date fecha_modificacion;
-    private lab2_especies lab2_especie;
-    private lab2_habitats lab2_habitat;
+    private lab2_especiesDTO especie_id;
+    private lab2_habitatsDTO habitat_id;
+
 }

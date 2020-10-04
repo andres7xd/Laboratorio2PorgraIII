@@ -25,6 +25,6 @@ import org.una.zoologico.entities.lab2_recorridos;
 public class lab2_estaciones_recorridosDTO {
     
      private Long id;
-     private lab2_recorridos recorrido_id;
-     private lab2_habitats lab2_habitat;
+     private lab2_recorridosDTO recorrido_id;
+     private lab2_habitatsDTO habitat_id;
 }

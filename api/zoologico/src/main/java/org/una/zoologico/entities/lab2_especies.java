@@ -50,7 +50,7 @@ public class lab2_especies implements Serializable {
     @JoinColumn(name = "fotografia")
     private lab2_fotografias lab2_fotografia;
 //
- @OneToMany(mappedBy = "lab2_especies") 
+ @OneToMany(mappedBy = "especies_id") 
     private List<lab2_habitats> lab2_habitats = new ArrayList<>();
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "lab2_especie")

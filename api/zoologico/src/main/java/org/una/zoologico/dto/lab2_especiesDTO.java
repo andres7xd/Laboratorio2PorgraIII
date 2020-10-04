@@ -30,7 +30,7 @@ public class lab2_especiesDTO {
     private String fecha_modificacion;
     private byte estado;
     private Date fecha_registro;
-   private lab2_fotografias lab2_fotografia;
+   private lab2_fotografiasDTO fotografia_id;
   
 
 }

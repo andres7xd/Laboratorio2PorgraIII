@@ -30,5 +30,5 @@ public class lab2_habitatsDTO {
     private Date fecha_registro;
     private Date fecha_modificacion;
     private byte estado;
-    private lab2_especiesDTO lab2_especies;
+    private lab2_especiesDTO especies_id;
 }
